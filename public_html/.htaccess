@@ -1,0 +1,16 @@
+#Отключение автоматических ковычек веб сервером
+php_flag magic_quotes_gpc Off
+
+#Кодировка
+AddDefaultCharset utf-8
+
+#Устанавливает индекс директории
+DirectoryIndex index.php
+
+#Включает переадресацию Апаче
+RewriteEngine On
+#Если пользователь не запрашивает конкретный файл
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Перенаправь пользователя на index.php
+RewriteRule ^(.*) index.php
